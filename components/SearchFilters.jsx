@@ -17,10 +17,16 @@ const SearchFilters = () => {
 const path = router.pathname;
 const { query } = router;
 const values = getFilterValues(filterValues)
+
 //loop over the values, updating the query
 values.forEach((item) => {
-    query[item.name] = item.value
+    //only apply the selected value
+    if(item.value && filterValues?.[item.name]) {
+       
+        query[item.name] = item.value
+    }
 })
+
 //pathname equals to path, and query equals to query
 router.push({ pathname:path, query})
     }
