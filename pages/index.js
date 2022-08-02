@@ -24,7 +24,6 @@ width={500} height={300} alt="banner" />
 
 export default function Home({ propertyForSale, propertyForRent}) {
 
-  console.log(propertyForSale, propertyForRent);
   return (
     <Box>
    <Banner  purpose="RENT A HOME"
@@ -38,7 +37,7 @@ export default function Home({ propertyForSale, propertyForRent}) {
    />
    {/* display data from api */}
    <Flex flexWrap="wrap">
-{propertyForRent.map((property) => <Property  property={property} key={property.id}/>)}
+{propertyForRent?.map((property) => <Property  property={property} key={property.id}/>)}
    </Flex>
  <Banner  purpose="BUY A HOME"
     title1="Find, Buy & Own Your"
@@ -50,7 +49,7 @@ export default function Home({ propertyForSale, propertyForRent}) {
     imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008'
    />
     <Flex flexWrap="wrap">
-{propertyForSale.map((property) => <Property  property={property} key={property.id}/>)}
+{propertyForSale?.map((property) => <Property  property={property} key={property.id}/>)}
    </Flex>
     </Box>
   )
