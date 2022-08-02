@@ -55,6 +55,7 @@ export default function Home({ propertyForSale, propertyForRent}) {
   )
 }
 
+//fetch data at build time
 export async function getStaticProps() {
 const propertyForSale = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-sale&hitsPerPage=6`)
 const propertyForRent = await fetchApi(`${baseUrl}/properties/list?locationExternalIDs=5002&purpose=for-rent&hitsPerPage=6`)
