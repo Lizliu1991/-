@@ -17,7 +17,7 @@ const SearchFilters = () => {
 const path = router.pathname;
 const { query } = router;
 const values = getFilterValues(filterValues)
-
+git 
 //loop over the values, updating the query
 values.forEach((item) => {
     //only apply the selected value

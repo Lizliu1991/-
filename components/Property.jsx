@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Box, Flex, Text, Avatar } from '@chakra-ui/react';
-// import { FaBed, Fabath } from 'react-icons/fa'
+import { MdBedroomParent, MdBathtub } from 'react-icons/md'
 import { BsGridFill } from "react-icons/bs";
 import { GoVerified } from 'react-icons/go';
 import millify from "millify";
@@ -10,7 +10,7 @@ import DefaultImage from '../assets/images/house.jpeg'
 
 
 const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID } }) => {
-   console.log("this is refresning");
+  
     return (
 
    
@@ -40,7 +40,7 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
                     </Box> 
                 </Flex>
                  <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
-                 {rooms}  rooms| {baths}  baths|
+                 {rooms} <MdBedroomParent />| {baths}  <MdBathtub />|
                
                  {millify(area)} sqft <BsGridFill />
                 </Flex>  

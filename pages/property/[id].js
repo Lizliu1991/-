@@ -1,6 +1,6 @@
 //dynamic routing
 import { Box, Flex, Spacer, Text, Avatar } from '@chakra-ui/react'
-// import { FaBed, Fabath } from 'react-icons/fa'
+import { MdBedroomParent, MdBathtub } from 'react-icons/md'
 import { BsGridFill } from "react-icons/bs";
 import { GoVerified } from 'react-icons/go';
 import millify from "millify";
@@ -30,7 +30,7 @@ const PropertyDetails = ({ propertyDetails: { price, rentFrequency, rooms, title
           </Box>
         </Flex>
         <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
-          {rooms}  rooms| {baths}  baths|
+        {rooms} <MdBedroomParent />| {baths}  <MdBathtub />|
           {millify(area)} sqft <BsGridFill />
         </Flex>
         <Box margin="2">

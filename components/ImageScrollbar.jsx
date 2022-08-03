@@ -10,7 +10,7 @@ const LeftArrow = () => {
         <Flex  justifyContent="center" alignItems="center" marginRight="1">
             <Icon  
                 as={FaArrowAltCircleLeft}
-                onClick={scrollPrev}
+                onClick={() => scrollPrev()}
                 fontSize="2xl"
                 cursor="pointer"
             />
@@ -26,7 +26,7 @@ const RightArrow = () => {
         <Flex  justifyContent="center" alignItems="center" marginRight="1">
             <Icon  
                 as={FaArrowAltCircleRight}
-                onClick={ scrollNext}
+                onClick={() => scrollNext() }
                 fontSize="2xl"
                 cursor="pointer"
             />
@@ -36,27 +36,27 @@ const RightArrow = () => {
 }
 
 const ImageScrollbar = ( {data}) => {
- //fix this scroll menu later
+ //fix this scroll menu later,changed itemID to itemId
   return (
-    <div>
-        {data.map((item) => <Image src={item.url} alt="phtot" width={200} height={200} key={item.id}/>)}
-    </div>
+    // <div>
+    //     {data.map((item) => <Image src={item.url} alt="photo" width={200} height={200} key={item.id}/>)}
+    // </div>
 
-//     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{overflow: "hidden"}}>
-// {data.map((item) => (
-//     <Box width="910px" itemID={item.id} overflow="hidden" p="1" key={item.id}>
-//         <Image 
-//         placeholder="blur" 
-//         blurDataURL={item.url} 
-//         src={item.url} 
-//         width={1000} 
-//         height={500} 
-//             alt="property"
-//             sizes="(max-width:500px) 100px, (max-width):1023px 400px, 1000px"
-//         />
-//     </Box>
-// ))}
-//     </ScrollMenu>
+    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow} style={{overflow: "hidden"}}>
+{data.map((item) => (
+    <Box width="910px" itemId={item.id} overflow="hidden" p="1" key={item.id}>
+        <Image 
+        placeholder="blur" 
+        blurDataURL={item.url} 
+        src={item.url} 
+        width={1000} 
+        height={500} 
+            alt="property"
+            sizes="(max-width:500px) 100px, (max-width):1023px 400px, 1000px"
+        />
+    </Box>
+))}
+    </ScrollMenu>
 
   )
 }
